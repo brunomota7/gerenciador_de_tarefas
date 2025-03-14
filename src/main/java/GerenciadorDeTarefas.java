@@ -5,9 +5,10 @@ import java.util.List;
 public class GerenciadorDeTarefas {
     public static void main(String[] args) {
 
-        List<String> tarefasPendentes = new ArrayList<>();
-        List<String> tarefasConcluidas = new ArrayList<>();
+        List<String> tarefasPendentes = new ArrayList<>(); // Lista de tarefas pendentes
+        List<String> tarefasConcluidas = new ArrayList<>(); // Lista de tarefas concluidas
 
+        // Text block
         String menu = """
                 GERENCIADOR DE TAREFAS
                 
@@ -18,6 +19,7 @@ public class GerenciadorDeTarefas {
                 Escolha uma opção:
                 """;
 
+        // Loop infinito
         while (true) {
             String opcao = (String) JOptionPane.showInputDialog(null, menu, "Menu", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("icones/verificar.png"), null, null);
 
@@ -58,6 +60,7 @@ public class GerenciadorDeTarefas {
         }
     }
 
+    // Função para exibir tarefas pendentes
     public static String listarTarefasPendentes(List<String> tarefasPendentes) {
         StringBuilder tarefas = new StringBuilder("\nTarefas Pendentes:\n");
         for (int i = 0; i < tarefasPendentes.size(); i++) {
@@ -66,6 +69,7 @@ public class GerenciadorDeTarefas {
         return tarefas.toString();
     }
 
+    // Função para exibir tarefas concluídas
     public static String listarTarefasConcluidas(List<String> tarefasConcluidas) {
         StringBuilder tarefas = new StringBuilder("\nTarefas Concluídas:\n");
         for (int i = 0; i < tarefasConcluidas.size(); i++) {
@@ -74,6 +78,7 @@ public class GerenciadorDeTarefas {
         return tarefas.toString();
     }
 
+    // Função que busca o indide da tarefa pendente na lista de pendentes e retorna o indice
     public static int buscarTarefa (List<String> listaPendetes){
         try {
             String escolha = JOptionPane.showInputDialog(listarTarefasPendentes(listaPendetes) + "\nDigite o número da terefa concluída:");
